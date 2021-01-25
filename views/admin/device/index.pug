@@ -1,0 +1,40 @@
+extends ../layout
+block content
+    .container-fluid
+            h1.mt-4 Quản lý phụ kiện
+            ol.breadcrumb.mb-4
+                li.breadcrumb-item
+                    a(href='/admin') Admin
+                li.breadcrumb-item.active Device
+            .card.mb-4
+                .card-header
+                    .row
+                        .col-sm-9.col-md-10
+                            i.fas.fa-table.mr-1
+                            span Danh sách phụ kiện
+                        .col-sm-3.col-md-2
+                            a.btn.btn-primary(href="/admin/device/create") Thêm
+                .card-body
+                    .table-responsive
+                        table#dataTable.table.table-bordered(width='100%', cellspacing='0')
+                            thead
+                                tr
+                                    th Hình ảnh
+                                    th Tên sản phẩm
+                                    th Loại
+                                    th Ngày nhập
+                                    th Số lượng
+                                    th Tác vụ
+                            tbody
+                                each item in data
+                                    tr
+                                        td
+                                            img(src="/upload/"+item.images, alt="No images", style="width: 100px")
+                                        td= item.name
+                                        td= item.type
+                                        td= item.date
+                                        td= item.count
+                                        td
+                                            a.mr-2(href="/admin/device/u="+ item._id).btn.btn-success Sửa
+                                            a(href="/admin/device/d="+ item._id,).btn.btn-danger Xóa
+                                    

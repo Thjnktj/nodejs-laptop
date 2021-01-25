@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Đăng ký
+        link(rel="stylesheet", href="/login/style.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js")
+    body
+        .main
+            section.sign-in
+                .container
+                    .signin-content
+                        .signin-image
+                            figure
+                                img(src='/images/signin-image.jpg', alt='sing up image')
+                                span Quay lại: 
+                                a(href="/") Trang chủ
+                        .signin-form
+                            h2.form-title Đăng nhập
+                            form#login-form.register-form(method='POST')
+                                .form-group
+                                    label(for='name')
+                                        i.fas.fa-envelope
+                                    input#name(type='text', name='email', placeholder='Email')
+                                .form-group
+                                    label(for='pass')
+                                        i.fas.fa-lock
+                                    input#pass(type='password', name='pass', placeholder='Password')
+                                .form-group.form-button
+                                    input#signin.form-submit(type='submit', value='Đăng nhập')
+                                    span &nbsp; or &nbsp;
+                                        a(href="/sign-up") đăng ký
+                            .social-login
+                                span.social-label Or login with
+                                ul.socials
+                                    li
+                                        a(href='#')
+                                            i.fab.fa-google(style='font-size: 28px')
+                                    li
+                                        a(href='#')
+                                            i.fab.fa-facebook(style='font-size: 28px')
+                                    li
+                                        a(href='#')
+                                            i.fab.fa-twitter(style='font-size: 28px')
+        script(src="/login/jquery.min.js")

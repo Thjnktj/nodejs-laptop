@@ -1,0 +1,57 @@
+extends ../layout
+block content
+    
+    .container-fluid.mt-4
+        .card.mb-4
+            .card-header
+                h3 Thông tin về thiết bị
+            .card-body
+                form(method="POST", enctype="multipart/form-data", onsubmit="return validateForm()")
+                    .row
+                        .col-md-4
+                            label Tên thiết bị
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="name")
+                        .col-md-4
+                            label(for="types") Chọn loại
+                            .form-group
+                                input#types.form-control(list="datalist",name="type")
+                                datalist#datalist
+                                   option(value="SSD")
+                                   option(value="HDD")
+                                   option(value="Chuột")
+                        .col-md-4
+                            label Số lượng
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="count")
+
+                    .row
+                        .col-md-4
+                            label Giá(vnd)
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="price")
+
+                        .col-md-4
+                            label Bảo hành(tháng)
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="protect")
+                    .row
+                        .col-md-12
+                            label Nội dung
+                            .form-group.d-flex            
+                                textarea#editor.form-control(name="description", cols="30", rows="10") Soạn thảo nội dung vào đây
+                                script(src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js")
+                                script.
+                                    ClassicEditor
+                                        .create( document.querySelector( '#editor' ) )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                    .row
+                        .col-md-12
+                            label Chọn ảnh
+                            input.form-control-file.border(type="file", name="images", multiple)
+                    .row
+                        .col-md-4
+                            br
+                            button.btn.btn-primary(type="submit") Thêm mới

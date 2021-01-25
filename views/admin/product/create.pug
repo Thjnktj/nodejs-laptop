@@ -1,0 +1,86 @@
+extends ../layout
+block content
+    
+    .container-fluid.mt-4
+        .card.mb-4
+            .card-header
+                h3 Thông tin về thiết bị
+            .card-body
+                form(method="POST", enctype="multipart/form-data", onsubmit="return validateForm()")
+                    .row
+                        .col-md-4
+                            label Tên máy
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="name")
+                        .col-md-4
+                            label Hệ điều hành
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="os")
+                        .col-md-4
+                            label Màn hình
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="display")
+
+                    .row
+                        .col-md-4
+                            label CPU
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="cpu")
+
+                        .col-md-4
+                            label Ram
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="ram")
+                        .col-md-4
+                            label Ổ cứng
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="hard")
+                    .row
+                        .col-md-4
+                            label Card đồ họa
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="graphics")
+                        .col-md-4 
+                            label Nguồn
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="power")
+                        .col-md-4
+                            label Wireless
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="wireless")
+                    .row
+                        .col-md-4
+                            label Pin
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="battery")
+                        .col-md-4
+                            label Giá bán
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="price")
+                        .col-md-4
+                            label Giảm giá
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="sale")
+                    .row
+                        .col-md-4
+                            label Số lượng
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="count")
+                    .row
+                        .col-md-12
+                            label Nội dung
+                            .form-group.d-flex            
+                                textarea#editor.form-control(name="description", cols="30", rows="10") Soạn thảo nội dung vào đây
+                                script(src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js")
+                                script.
+                                    ClassicEditor
+                                        .create( document.querySelector( '#editor' ) )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                    .row
+                        .col-md-8
+                            label Chọn ảnh
+                            input.form-control-file.border(type="file", name="images", multiple)
+                        .col-md-4
+                            button.btn.btn-primary(type="submit") Thêm mới

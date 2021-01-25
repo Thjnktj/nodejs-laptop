@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Đăng ký
+        link(rel="stylesheet", href="/login/style.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js")
+    body
+
+        .main
+            section.signup
+                .container
+                    .signup-content
+                        .signup-form
+                            h2.form-title Đăng ký
+                            form#register-form.register-form(method='POST')
+                                .form-group
+                                    label(for='name')
+                                        i.fas.fa-user
+                                    input#name(type='text', name='name', placeholder='Nhập họ tên')
+                                .form-group
+                                    label(for='email')
+                                        i.fas.fa-envelope
+                                    input#email(type='email', name='email', placeholder='Nhập email')
+                                .form-group
+                                    label(for='phone')
+                                        i.fas.fa-phone
+                                    input#phone(type='phone', name='phone', placeholder='Nhập số điện thoại')
+                                .form-group
+                                    label(for='address')
+                                        i.fas.fa-location-arrow
+                                    input#address(type='text', name='address', placeholder='Địa chỉ')
+                                .form-group
+                                    label(for='pass')
+                                        i.fas.fa-lock
+                                    input#pass(type='password', name='pass', placeholder='Mật khẩu')
+                                .form-group
+                                    label(for='re-pass')
+                                        i.fas.fa-lock
+                                    input#re_pass(type='password', name='re_pass', placeholder='Nhập lại mật khẩu')
+                                .form-group.form-button
+                                    input#signup.form-submit(type='submit', name='signup', value='Đăng ký')
+                        .signup-image
+                            figure
+                                img(src='/images/signup-image.jpg', alt='sing up image')
+
+        script(src="/login/jquery.min.js")

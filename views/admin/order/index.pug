@@ -1,0 +1,36 @@
+extends ../layout
+block content
+    .container-fluid
+            h1.mt-4 Quản lý đơn hàng
+            ol.breadcrumb.mb-4
+                li.breadcrumb-item
+                    a(href='/admin') Admin
+                li.breadcrumb-item.active Order
+            .card.mb-4
+                .card-header
+                    .row
+                        .col-sm-9.col-md-10
+                            i.fas.fa-table.mr-1
+                            span Danh sách đơn hàng
+                .card-body
+                    .table-responsive
+                        table#dataTable.table.table-bordered(width='100%', cellspacing='0')
+                            thead
+                                tr
+                                    th Mã đơn hàng
+                                    th Người đặt
+                                    th Sản phẩm
+                                    th Đơn giá
+                                    th Thời gian
+                                    th Tác vụ
+                            tbody
+                                //- each item in data
+                                //-     tr
+                                //-         td= item.images
+                                //-         td= item.name
+                                //-         td= item.date
+                                //-         td= item.count
+                                //-         td
+                                //-             a.mr-2(href="/admin/product/u="+ item._id).btn.btn-success Sửa
+                                //-             a(href="/admin/product/d="+ item._id,).btn.btn-danger Xóa
+                                    

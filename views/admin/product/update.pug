@@ -1,0 +1,86 @@
+extends ../layout
+block content
+    
+    .container-fluid.mt-4
+        .card.mb-4
+            .card-header
+                h3 Thông tin về thiết bị
+            .card-body
+                form(method="POST",enctype="multipart/form-data", onsubmit="return validateForm()")
+                    .row
+                        .col-md-4
+                            label Tên máy
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="name", value= data.name)
+                        .col-md-4
+                            label Hệ điều hành
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="os", value= data.os)
+                        .col-md-4
+                            label Màn hình
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="screen", value= data.screen)
+
+                    .row
+                        .col-md-4
+                            label CPU
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="cpu", value= data.cpu)
+
+                        .col-md-4
+                            label Ram
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="ram", value= data.ram)
+                        .col-md-4
+                            label Ổ cứng
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="hard", value= data.hard)
+                    .row
+                        .col-md-4
+                            label Card đồ họa
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="graphics", value= data.graphics)
+                        .col-md-4 
+                            label Nguồn
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="power", value= data.power)
+                        .col-md-4
+                            label Wireless
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="wireless", value= data.wireless)
+                    .row
+                        .col-md-4
+                            label Pin
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="battery", value= data.battery)
+                        .col-md-4
+                            label Giá bán
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="price", value= data.price)
+                        .col-md-4
+                            label Giảm giá(%)
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="sale", value= data.sale)
+                    .row
+                        .col-md-4
+                            label Số lượng
+                            .form-group.d-flex
+                                input#check-1.form-control(type="text", name="count", value= data.count)
+                    .row
+                        .col-md-12
+                            label Nội dung
+                            .form-group.d-flex            
+                                textarea#editor.form-control(name="description", cols="30", rows="10") Soạn thảo nội dung vào đây
+                                script(src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js")
+                                script.
+                                    ClassicEditor
+                                        .create( document.querySelector( '#editor' ) )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                    .row
+                        .col-md-8
+                            label Chọn ảnh
+                            input.form-control-file.border(type="file", name="images", multiple, value= data.images)
+                        .col-md-4
+                            button.btn.btn-primary(type="submit") Cập nhật
